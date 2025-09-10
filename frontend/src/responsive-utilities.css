@@ -1,19 +1,14 @@
-/* Mobile-First Responsive CSS Additional Utilities */
-
-/* Base styles - Mobile first (320px+) */
 .app-container {
   width: 100%;
   min-height: 100vh;
 }
 
-/* Responsive grid system */
 .responsive-grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: 1fr; /* Mobile: single column */
+  grid-template-columns: 1fr; 
 }
 
-/* Responsive utilities */
 .hide-mobile {
   display: none;
 }
@@ -28,100 +23,4 @@
 
 .show-desktop {
   display: none;
-}
-
-/* Tablet and up */
-@media (min-width: 768px) {
-  .responsive-grid {
-    grid-template-columns: 2fr 1fr; /* Tablet+: two columns */
-    gap: 30px;
-  }
-  
-  .hide-mobile {
-    display: block;
-  }
-  
-  .show-mobile {
-    display: none;
-  }
-  
-  .hide-desktop {
-    display: none;
-  }
-  
-  .show-desktop {
-    display: block;
-  }
-}
-
-/* Desktop and up */
-@media (min-width: 1200px) {
-  .responsive-grid {
-    grid-template-columns: 2.5fr 1fr; /* Desktop: wider table ratio */
-    gap: 40px;
-  }
-}
-
-/* Touch-friendly improvements */
-@media (hover: none) and (pointer: coarse) {
-  /* Touch devices */
-  .edit-btn,
-  .delete-btn {
-    min-height: 44px; /* iOS recommended touch target */
-    min-width: 44px;
-  }
-  
-  .form-group input {
-    min-height: 44px;
-  }
-  
-  .submit-btn,
-  .cancel-btn {
-    min-height: 48px;
-  }
-}
-
-/* High DPI displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .users-table {
-    border-width: 0.5px; /* Thinner borders on high DPI */
-  }
-}
-
-/* Landscape orientation adjustments */
-@media (orientation: landscape) and (max-height: 500px) {
-  .app-header {
-    padding: 15px 20px;
-  }
-  
-  .app-header h1 {
-    font-size: 1.5rem;
-  }
-  
-  .app-main {
-    padding: 10px;
-  }
-}
-
-/* Print styles */
-@media print {
-  .app-header,
-  .app-footer,
-  .form-section {
-    display: none;
-  }
-  
-  .table-container {
-    width: 100%;
-    margin: 0;
-  }
-  
-  .users-table {
-    font-size: 0.8rem;
-  }
-  
-  .edit-btn,
-  .delete-btn {
-    display: none;
-  }
 }

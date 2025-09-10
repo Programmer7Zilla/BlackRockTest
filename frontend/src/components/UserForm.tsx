@@ -205,9 +205,40 @@ const UserForm: React.FC<UserFormProps> = ({
             value={formData.name}
             onChange={handleInputChange}
             className={errors.name ? 'error' : getFieldValidationStatus('name') === 'valid' ? 'valid' : getFieldValidationStatus('name') === 'invalid' ? 'invalid' : ''}
+            placeholder="Enter first name (letters only)"
             disabled={isSubmitting || loading}
           />
           {errors.name && <span className="error-message">{errors.name}</span>}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="surname">Surname *</label>
+          <input
+            type="text"
+            id="surname"
+            name="surname"
+            value={formData.surname}
+            onChange={handleInputChange}
+            className={errors.surname ? 'error' : getFieldValidationStatus('surname') === 'valid' ? 'valid' : getFieldValidationStatus('surname') === 'invalid' ? 'invalid' : ''}
+            placeholder="Enter last name (letters only)"
+            disabled={isSubmitting || loading}
+          />
+          {errors.surname && <span className="error-message">{errors.surname}</span>}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="email">Email *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            className={errors.email ? 'error' : getFieldValidationStatus('email') === 'valid' ? 'valid' : getFieldValidationStatus('email') === 'invalid' ? 'invalid' : ''}
+            placeholder="Enter valid email (e.g., user@example.com)"
+            disabled={isSubmitting || loading}
+          />
+          {errors.email && <span className="error-message">{errors.email}</span>}
         </div>
 
         <div className="form-group">
@@ -223,6 +254,21 @@ const UserForm: React.FC<UserFormProps> = ({
             disabled={isSubmitting || loading}
           />
           {errors.company && <span className="error-message">{errors.company}</span>}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="jobTitle">Job Title *</label>
+          <input
+            type="text"
+            id="jobTitle"
+            name="jobTitle"
+            value={formData.jobTitle}
+            onChange={handleInputChange}
+            className={errors.jobTitle ? 'error' : getFieldValidationStatus('jobTitle') === 'valid' ? 'valid' : getFieldValidationStatus('jobTitle') === 'invalid' ? 'invalid' : ''}
+            placeholder="Enter job title"
+            disabled={isSubmitting || loading}
+          />
+          {errors.jobTitle && <span className="error-message">{errors.jobTitle}</span>}
         </div>
 
         <div className="form-actions">
