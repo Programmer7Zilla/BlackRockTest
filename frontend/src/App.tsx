@@ -7,7 +7,6 @@ import './App.css';
 
 const App: React.FC = () => {
   const { state, actions } = useUserManager();
-  console.log('App state:', state);
   const { users, loading, error, editingUser, operationLoading } = state;
   const { 
     fetchUsers, 
@@ -17,6 +16,8 @@ const App: React.FC = () => {
     setEditingUser, 
     clearError 
   } = actions;
+
+  // Initial data fetch
   useEffect(() => {
     fetchUsers();
   }, [fetchUsers]);
@@ -62,6 +63,9 @@ const App: React.FC = () => {
           loading={loading || operationLoading}
         />
       </main>
+
+      <footer className="app-footer">
+      </footer>
     </div>
   );
 };
